@@ -1,0 +1,51 @@
+<section>
+  <article>
+    <h3>Class e style binding</h3>
+    <div>
+      Selecione uma classe
+      <select #alert_class (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Informação</option>
+        <option value="alert-warning">Aviso</option>
+        <option value="alert-danger">Perigo</option>
+      </select>
+
+      <div class="alert {{ alert_class.value }}">Texto colorido</div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-success]="alert_class.value == 'alert-success'"
+      >
+        Sucesso
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-info]="alert_class.value == 'alert-info'"
+      >
+        Informação
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-warning]="alert_class.value == 'alert-warning'"
+      >
+        Aviso
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-danger]="alert_class.value == 'alert-danger'"
+      >
+        Perigo
+      </div>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        [style.display]="alert_class.value == 'alert-danger' ? 'block' : 'none'"
+      >
+        Esse texto aparece em caso de perigo
+      </div>
+    </div>
+  </article>
+</section>

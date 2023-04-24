@@ -1,0 +1,24 @@
+<section class="event_binding">
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="onClick()">Me clique</button>
+      <input
+        type="text"
+        (keyup)="onKeyUp(input.value)"
+        (keyup.enter)="onSaveValue(input.value)"
+        (blur)="onSaveValue(input.value)"
+        #input
+      />
+      <p>Valor atual: {{ inputValue }}</p>
+      <p>Valor salvo: {{ saveValue }}</p>
+      <h2
+        (mouseover)="onMouseOver()"
+        (mouseout)="onMouseOver()"
+        [class.highlight]="isMouseOver"
+      >
+          Passe o mouse sobre mim
+      </h2>
+  </div>
+  </article>
+</section>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'data_binding';
+  courseName = "Angular";
+
+  onInputChange(event: any){
+    console.log(event)
+  }
+
 }
